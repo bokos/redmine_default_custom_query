@@ -1,6 +1,6 @@
 require_dependency 'projects_helper'
 
-module DefaultCustomQuery
+module Helpers
   module ProjectsHelperPatch
 
     def project_settings_tabs
@@ -19,4 +19,4 @@ module DefaultCustomQuery
   end
 end
 
-ProjectsController.send :helper, DefaultCustomQuery::ProjectsHelperPatch
+ProjectsController.send :helper, Helpers::ProjectsHelperPatch

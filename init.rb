@@ -12,4 +12,6 @@ Redmine::Plugin.register :redmine_default_custom_query do
   end
 end
 
-require_relative 'lib/default_custom_query'
+require File.expand_path('../lib/default_custom_query', __FILE__)
+
+include DefaultCustomQueryHelper

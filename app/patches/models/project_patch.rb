@@ -1,6 +1,6 @@
 require_dependency 'project'
 
-module DefaultCustomQuery
+module Models
   module ProjectPatch
 
     extend ActiveSupport::Concern
@@ -19,6 +19,6 @@ module DefaultCustomQuery
   end
 end
 
-DefaultCustomQuery::ProjectPatch.tap do |mod|
+Models::ProjectPatch.tap do |mod|
   Project.send :include, mod unless Project.include?(mod)
 end

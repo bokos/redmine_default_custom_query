@@ -1,6 +1,6 @@
 require_dependency 'issue_query'
 
-module DefaultCustomQuery
+module Models
   module IssueQueryPatch
     extend ActiveSupport::Concern
 
@@ -14,6 +14,6 @@ module DefaultCustomQuery
   end
 end
 
-DefaultCustomQuery::IssueQueryPatch.tap do |mod|
+Models::IssueQueryPatch.tap do |mod|
   IssueQuery.send :include, mod unless IssueQuery.include?(mod)
 end

@@ -1,6 +1,6 @@
 require_dependency 'query'
 
-module DefaultCustomQuery
+module Models
   module QueryPatch
     extend ActiveSupport::Concern
 
@@ -10,6 +10,6 @@ module DefaultCustomQuery
   end
 end
 
-DefaultCustomQuery::QueryPatch.tap do |mod|
+Models::QueryPatch.tap do |mod|
   Query.send :include, mod unless Query.include?(mod)
 end
